@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Robotics Engineer | Portfolio</title>
+    <style>
+        /* CSS VARIABLES - Change these to change the colors of the whole site! */
+        :root {
+            --primary: #6c5ce7;    /* Modern Purple */
+            --secondary: #00cec9;  /* Bright Teal */
+            --accent: #fdcb6e;     /* Sunny Yellow */
+            --bg: #f0f2f5;         /* Soft Light Grey */
+            --text: #2d3436;       /* Dark Grey */
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--white);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* SECTION CONTROL - This makes the "pages" work without JS */
+        section {
+            display: none; /* Hide all sections by default */
+            padding: 100px 20px 60px;
+            min-height: 100vh;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* The magic trick: Show the section if its ID is in the URL (e.g., #about) */
+        section:target {
+            display: block;
+        }
+
+        /* Default view: Show Home if no target is selected */
+        #home {
+            display: block;
+        }
+        section:target ~ #home {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HOME PAGE STYLES */
+        .hero {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background: var(--accent);
+            padding: 5px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* PROJECT CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* ABOUT ME BOX */
+        .about-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* CONTACT FORM */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--secondary);
+        }
+
+        /* UTILITY */
+        .center { text-align: center; }
+        .rounded-img { border-radius: 25px; width: 100%; max-width: 400px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <span class="badge">9th Grade Student</span>
+            <h1>Future Robotics Engineer</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                Aspiring Mechanical Engineer specializing in AI and automated systems.
+            </p>
+            <br>
+            <div style="background: var(--accent); height: 10px; width: 100px; margin: 20px auto; border-radius: 10px;"></div>
+            <p>Welcome to my journey in tech!</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">My Story</h2>
+            <p>I wish to become a robotics engineer or a mechanical engineer who specializes in AI. I enjoy building automated systems, experimenting with new concepts, and turning my imagination into practical products. Engineers such as Mark Rober inspired me to realize the wonders of developing products that use innovative solutions for problem-solving.</p>
+            <br>
+            <p>To achieve my objective, I engage in the activity of <strong>VEX V5 Robotics</strong>, learn about AI using the <strong>GYEL initiative</strong>, and continue bettering my coding skills by learning how to create AI agents.</p>
+            <br>
+            <p>Both my studies and pursuits have helped mold my strength characteristics. For example, I use my strength of leadership, acquired from being the captain of my robotics club, when I get to help other players organize themselves and keep their minds focused when completing difficult design tasks. I also apply my use of creativity. This happens when I design new parts for the robot or when I have to provide solutions when a problem is encountered during the match.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="center" style="margin-bottom: 30px;">Featured Work</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>VEX V5 Robot</h3>
+                <p>Designed and programmed a robot for competition using C++, focusing on intake efficiency and drive-train stability.</p>
+            </div>
+            <div class="card">
+                <h3>AI Agent Beta</h3>
+                <p>Experimenting with logic-based coding to create an autonomous agent that can solve simple tasks through reasoning.</p>
+            </div>
+            <div class="card">
+                <h3>Entrepreneurship Pitch</h3>
+                <p>Won first prize for a business pitch focusing on technical solutions for real-world problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="about-container">
+            <h2 style="color: var(--primary);">Resume & Skills</h2>
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+            <h3>Key Strengths</h3>
+            <ul style="margin-left: 20px; padding: 10px;">
+                <li><strong>Leadership:</strong> Captain of Robotics Club</li>
+                <li><strong>Creativity:</strong> Custom part design & prototyping</li>
+                <li><strong>Perseverance:</strong> Solving complex match-day engineering bugs</li>
+            </ul>
+            <br>
+            <h3>Awards</h3>
+            <p>🏆 First Prize - Entrepreneurship Pitch Award</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="center">Get In Touch</h2>
+        <p class="center" style="margin-bottom: 30px;">I'm always looking to collaborate on cool engineering projects!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
