@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future Robotics Engineer | Portfolio</title>
     <style>
-        /* CSS VARIABLES - Change these to change the colors of the whole site! */
+        /* CSS VARIABLES */
         :root {
             --primary: #6c5ce7;    /* Modern Purple */
             --secondary: #00cec9;  /* Bright Teal */
@@ -57,9 +57,9 @@
             color: white;
         }
 
-        /* SECTION CONTROL - This makes the "pages" work without JS */
+        /* SECTION CONTROL */
         section {
-            display: none; /* Hide all sections by default */
+            display: none; 
             padding: 100px 20px 60px;
             min-height: 100vh;
             max-width: 1000px;
@@ -67,15 +67,15 @@
             animation: fadeIn 0.5s ease;
         }
 
-        /* The magic trick: Show the section if its ID is in the URL (e.g., #about) */
         section:target {
             display: block;
         }
 
-        /* Default view: Show Home if no target is selected */
         #home {
             display: block;
         }
+        
+        /* This hides home if any other section is targeted */
         section:target ~ #home {
             display: none;
         }
@@ -85,31 +85,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HOME PAGE STYLES */
-        .hero {
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .badge {
-            background: var(--accent);
-            padding: 5px 15px;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+        /* HERO STYLES */
+        .hero { text-align: center; padding-top: 50px; }
+        .hero h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        .badge { background: var(--accent); padding: 5px 15px; border-radius: 50px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
 
         /* PROJECT CARDS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -121,59 +105,50 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             border-bottom: 5px solid var(--secondary);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primary); margin-bottom: 10px; }
+        
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
         }
 
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* ABOUT ME BOX */
-        .about-container {
+        /* CONTENT BOXES */
+        .content-box {
             background: var(--white);
             padding: 40px;
             border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .project-detail-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--secondary);
+            padding-left: 10px;
         }
 
         /* CONTACT FORM */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
+        input, textarea { padding: 15px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; }
+        button { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: var(--secondary); }
 
-        input, textarea {
-            padding: 15px;
-            border-radius: 15px;
-            border: 2px solid #ddd;
-            font-size: 1rem;
-        }
-
-        button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: var(--secondary);
-        }
-
-        /* UTILITY */
         .center { text-align: center; }
-        .rounded-img { border-radius: 25px; width: 100%; max-width: 400px; }
     </style>
 </head>
 <body>
@@ -200,7 +175,7 @@
     </section>
 
     <section id="about">
-        <div class="about-container">
+        <div class="content-box">
             <h2 style="color: var(--primary); margin-bottom: 20px;">My Story</h2>
             <p>I wish to become a robotics engineer or a mechanical engineer who specializes in AI. I enjoy building automated systems, experimenting with new concepts, and turning my imagination into practical products. Engineers such as Mark Rober inspired me to realize the wonders of developing products that use innovative solutions for problem-solving.</p>
             <br>
@@ -211,25 +186,50 @@
     </section>
 
     <section id="projects">
-        <h2 class="center" style="margin-bottom: 30px;">Featured Work</h2>
+        <h2 class="center" style="margin-bottom: 10px;">Computer Science & Engineering Projects</h2>
+        <p class="center" style="margin-bottom: 30px;">A collection of my work in app development and robotics.</p>
+        
         <div class="grid">
             <div class="card">
-                <h3>VEX V5 Robot</h3>
-                <p>Designed and programmed a robot for competition using C++, focusing on intake efficiency and drive-train stability.</p>
+                <div>
+                    <h3>Dragon ShootR App</h3>
+                    <div class="project-detail-meta">Course: PLTW CSE | 9th Grade</div>
+                    <p>An interactive shooting game built with MIT App Inventor featuring pixel art, collision logic, and progressive difficulty.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1EonZ3jrqQh8LPujwJNgL4rly7H6kJ88x/view?usp=sharing" target="_blank" class="btn-link">View Project File</a>
             </div>
+
             <div class="card">
-                <h3>AI Agent Beta</h3>
-                <p>Experimenting with logic-based coding to create an autonomous agent that can solve simple tasks through reasoning.</p>
+                <div>
+                    <h3>AI Logic Guessing Game</h3>
+                    <div class="project-detail-meta">App Development | Logic & Variables</div>
+                    <p>A two-player game where the app uses conditional logic to guide the user to a secret number with "higher" or "lower" prompts.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/13ooGPCakJZZSF8iiVoISpGN8WTcZXJ75/view?usp=sharing" target="_blank" class="btn-link">Watch Demo Video</a>
             </div>
+
             <div class="card">
-                <h3>Entrepreneurship Pitch</h3>
-                <p>Won first prize for a business pitch focusing on technical solutions for real-world problems.</p>
+                <div>
+                    <h3>VEX V5 Robot</h3>
+                    <div class="project-detail-meta">Robotics Club | C++</div>
+                    <p>Designed and programmed a competition-ready robot with a focus on intake efficiency and drivetrain stability.</p>
+                </div>
+                <a href="#contact" class="btn-link">Inquire for Details</a>
             </div>
+        </div>
+
+        <div class="content-box" style="margin-top: 50px;">
+            <h3 style="color: var(--primary);">Detailed Spotlight: Dragon ShootR</h3>
+            <p><strong>Overview:</strong> I created a simple shooting game using block-based coding in the MIT App Inventor software. I created a game where a human character moves left and right and shoots bullets to score points by hitting a flying dragon before time runs out.</p>
+            <br>
+            <p><strong>Technical Skills:</strong> I used variables to keep track of the score, timer, and lives. I implemented event-driven programming so the game reacts to collisions and timer events. This project helped enhance my problem-solving skills, specifically when debugging bullet collision and timer logic.</p>
+            <br>
+            <p><em>Collaboration: My partner handled the pixel art via Piskel, while I handled all programming and logic.</em></p>
         </div>
     </section>
 
     <section id="resume">
-        <div class="about-container">
+        <div class="content-box">
             <h2 style="color: var(--primary);">Resume & Skills</h2>
             <hr style="margin: 20px 0; border: 1px solid #eee;">
             <h3>Key Strengths</h3>
